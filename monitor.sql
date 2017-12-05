@@ -1,4 +1,4 @@
--- wordpress slider update automatically
+-- wordpress huge_it_slider update automatically
 --this is because of everyday newspaper insertion on TV
 
 --create a cronjob on server to do this every day (period)
@@ -31,3 +31,9 @@ INSERT INTO `monitor_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (@ne
 INSERT INTO `monitor_hugeit_slider_slide` (`slider_id`, `attachment_id`, `type`, `order`, `draft`) VALUES ('96', @newid, 'image', '0', '0')
 --insert slide
 
+--update post  that show slider
+UPDATE `monitor_posts` SET `post_author` = 1, `post_date` = '2017-04-24 14:24:35', `post_date_gmt` = '2017-04-24 10:54:35', `post_content` = '[huge_it_slider id=\"98\"]\r\n\r\n', `post_content_filtered` = '', `post_title` = '', `post_excerpt` = '', `post_status` = 'publish', `post_type` = 'page', `comment_status` = 'closed', `ping_status` = 'closed', `post_password` = '', `post_name` = '%d8%a2%d8%ae%d8%b1%db%8c%d9%86-%d8%a7%d8%ae%d8%a8%d8%a7%d8%b1', `to_ping` = '', `pinged` = '', `post_modified` = '2017-12-05 04:00:59', `post_modified_gmt` = '2017-12-05 05:00:59', `post_parent` = 0, `menu_order` = 0, `post_mime_type` = '', `guid` = '@ipaddress/monitor/wordpress/?page_id=25' WHERE `ID` = @postid 
+
+--last thing: reset webpages has shown on any where
+-- I use custom.txt file on root and see it every 1 second with ajax
+-- when I want refresh anywhere , rename custom0.txt and rename it again to custom.txt
